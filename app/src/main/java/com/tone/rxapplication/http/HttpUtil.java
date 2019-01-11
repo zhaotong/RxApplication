@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.tone.rxapplication.entity.MovieTheather;
 
 import java.io.IOException;
+import java.util.Date;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -55,6 +56,20 @@ public class HttpUtil {
     public Observable<MovieTheather> getMovie() {
         return retrofit.create(Api.class).getMovieTheaters();
     }
+
+    public Observable<String> getTime() {
+        return retrofit.create(Api.class)
+                .getMovieTheaters()
+                .flatMap(new Function<MovieTheather, Observable<String>>() {
+                    @Override
+                    public Observable<String> apply(MovieTheather movieTheather) throws Exception {
+                        return Observable.just(new Date().toString());
+                    }
+                });
+    }
+
+
+
 
 
     public <T> Observable<T> postData(String url, Map<String, String> map, final Class<T> clazz){

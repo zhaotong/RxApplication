@@ -4,20 +4,45 @@
     android:layout_height="match_parent">
 
 
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
     <TextView
+        android:id="@+id/text"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
-        android:text="RxJava 入门教程"
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/button"
-        android:onClick="toMovie"
+        android:id="@+id/button1"
         android:layout_marginTop="40dp"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Movie" />
+        android:text="button1" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="button2" />
+
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:background="@color/colorAccent"
+        android:layout_height="wrap_content">
+
+        <com.tone.rxapplication.ui.MyImageView
+            android:layout_margin="10dp"
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+    </FrameLayout>
 
 
 </FrameLayout>

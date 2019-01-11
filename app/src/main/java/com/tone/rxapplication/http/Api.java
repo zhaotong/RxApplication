@@ -5,6 +5,7 @@ import com.tone.rxapplication.entity.MovieTheather;
 import java.util.Map;
 
 import io.reactivex.Observable;
+import okhttp3.ResponseBody;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -22,5 +23,8 @@ public interface Api {
     @POST
     Observable<String> postDate(@Url String url, @FieldMap Map<String, String> map);
 
+    @FormUrlEncoded
+    @POST
+    Observable<ResponseBody> getDate(@Url String url, @FieldMap Map<String, String> map);
 
 }
